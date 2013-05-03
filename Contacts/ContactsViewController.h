@@ -22,6 +22,10 @@
 #import "ImportOperation.h"
 #import "OAuthXSDK.h"
 
+
+@class WebViewController;
+
+
 @interface ContactsViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIActionSheetDelegate, ContactDelegate, ImportOperationDelegate, OAuthXSessionDelegate, OAuthXWebViewDelegate> {
 }
 
@@ -35,5 +39,7 @@
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @property(nonatomic, retain) ImportOperation *importOperation;
+
+@property (nonatomic, retain) WebViewController *webViewController;
 
 @end

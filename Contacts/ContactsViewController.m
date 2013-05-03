@@ -42,6 +42,7 @@
 @synthesize tableView=_tableView;
 @synthesize loadingView, loadingProgressView, importOperation;
 @synthesize downloadingPictures;
+@synthesize webViewController;
 
 - (void)loadView
 {
@@ -331,6 +332,12 @@
 
 - (void) oauthXDidLoginToService:(NSString *)service {
     [self importContactsFromService: service];
+    [self.webViewController dismissModalViewControllerAnimated:YES];
+}
+
+- (void) oauthXDidNotLoginToService:(NSString *)service userCanceled:(BOOL)cancelled
+{
+    [self.webViewController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)oauthXDidLoginWithURL:(NSURL *)loginURL
@@ -338,6 +345,7 @@
     WebViewController *vc = [[WebViewController alloc] initWithNibName:NSStringFromClass([WebViewController class]) bundle:nil];
     [self presentViewController:vc animated:YES completion:^(){}];
     [vc loadURL:loginURL];
+    self.webViewController = vc;
 }
 
 @end
