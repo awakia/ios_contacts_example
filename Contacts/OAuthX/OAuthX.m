@@ -31,7 +31,7 @@ static NSString* kProxyURL = @"https://www.oauthx.com/proxy";
 
 @implementation OAuthX
 
-@synthesize appKey, callbackUrl, tokens, sessionDelegate, request;
+@synthesize appKey, callbackUrl, tokens, sessionDelegate, webviewDelegate, request;
 
 /************************************************************************************
  ** Initialization
@@ -92,7 +92,12 @@ static NSString* kProxyURL = @"https://www.oauthx.com/proxy";
     
     NSString *oauthXAuthorizeUrl = [OAuthXRequest serializeURL:[kAuthorizeURL stringByAppendingString:self.appKey] params:params];
     NSLog(@"%@", oauthXAuthorizeUrl);
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:oauthXAuthorizeUrl]];
+    if ([self.webviewDelegate respondsToSelector:@selector(oauthXDidLoginWithURL:)]) {
+        [self.webviewDelegate oauthXDidLoginWithURL:[NSURL URLWithString:oauthXAuthorizeUrl]];
+    }
+
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:oauthXAuthorizeUrl]];
+
 }
 
 /**

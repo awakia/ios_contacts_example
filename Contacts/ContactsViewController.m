@@ -18,6 +18,7 @@
 #import "ContactsViewController.h"
 #import "AppDelegate.h"
 #import "Contact.h"
+#import "WebViewController.h"
 #import "ContactTableViewCell.h"
 
 #import "AddressBookImportOperation.h"
@@ -41,6 +42,13 @@
 @synthesize tableView=_tableView;
 @synthesize loadingView, loadingProgressView, importOperation;
 @synthesize downloadingPictures;
+
+- (void)loadView
+{
+    [super loadView];
+    AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    [appDelegate.oauthx setWebviewDelegate:self];
+}
 
 - (void)viewDidLoad
 {
@@ -312,7 +320,7 @@
     AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     
     if (![appDelegate.oauthx isAccessTokenValidForService:service]) {
-        [appDelegate.oauthx authorizeService:service delegate:self];    
+        [appDelegate.oauthx authorizeService:service delegate:self];
         return;
     }
 	
@@ -323,6 +331,13 @@
 
 - (void) oauthXDidLoginToService:(NSString *)service {
     [self importContactsFromService: service];
+}
+
+- (void)oauthXDidLoginWithURL:(NSURL *)loginURL
+{
+    WebViewController *vc = [[WebViewController alloc] initWithNibName:NSStringFromClass([WebViewController class]) bundle:nil];
+    [self presentViewController:vc animated:YES completion:^(){}];
+    [vc loadURL:loginURL];
 }
 
 @end

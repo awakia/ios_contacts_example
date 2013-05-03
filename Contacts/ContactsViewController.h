@@ -22,7 +22,7 @@
 #import "ImportOperation.h"
 #import "OAuthXSDK.h"
 
-@interface ContactsViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIActionSheetDelegate, ContactDelegate, ImportOperationDelegate, OAuthXSessionDelegate> {
+@interface ContactsViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIActionSheetDelegate, ContactDelegate, ImportOperationDelegate, OAuthXSessionDelegate, OAuthXWebViewDelegate> {
 }
 
 @property(nonatomic, retain) NSMutableDictionary *downloadingPictures;

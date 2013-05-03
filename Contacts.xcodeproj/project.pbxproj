@@ -23,6 +23,8 @@
 		4815B5901733B6E0001D3CE2 /* OAuthXRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4815B57D1733B6E0001D3CE2 /* OAuthXRequest.m */; };
 		4815B5911733B6E0001D3CE2 /* OAuthXResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4815B57F1733B6E0001D3CE2 /* OAuthXResponse.m */; };
 		4815B5921733B6E0001D3CE2 /* OAuthXToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 4815B5821733B6E0001D3CE2 /* OAuthXToken.m */; };
+		4815B5981733B924001D3CE2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4815B5971733B924001D3CE2 /* WebViewController.m */; };
+		4815B59A1733C067001D3CE2 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4815B5991733C067001D3CE2 /* WebViewController.xib */; };
 		4CB2877514BCF648005C47A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB2877414BCF648005C47A9 /* UIKit.framework */; };
 		4CB2877714BCF648005C47A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB2877614BCF648005C47A9 /* Foundation.framework */; };
 		4CB2877914BCF648005C47A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB2877814BCF648005C47A9 /* CoreGraphics.framework */; };
@@ -91,6 +93,9 @@
 		4815B5801733B6E0001D3CE2 /* OAuthXSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthXSDK.h; sourceTree = "<group>"; };
 		4815B5811733B6E0001D3CE2 /* OAuthXToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthXToken.h; sourceTree = "<group>"; };
 		4815B5821733B6E0001D3CE2 /* OAuthXToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthXToken.m; sourceTree = "<group>"; };
+		4815B5961733B924001D3CE2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		4815B5971733B924001D3CE2 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		4815B5991733C067001D3CE2 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		4CB2877014BCF648005C47A9 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB2877414BCF648005C47A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CB2877614BCF648005C47A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -304,6 +309,8 @@
 		4CB2887414BD0F63005C47A9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4815B5961733B924001D3CE2 /* WebViewController.h */,
+				4815B5971733B924001D3CE2 /* WebViewController.m */,
 				4CB2889014BD0FFD005C47A9 /* ContactsViewController.h */,
 				4CB2889114BD0FFD005C47A9 /* ContactsViewController.m */,
 			);
@@ -322,6 +329,7 @@
 		4CB2887614BD0F85005C47A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4815B5991733C067001D3CE2 /* WebViewController.xib */,
 				4CB2889A14BD100D005C47A9 /* ContactTableViewCell.h */,
 				4CB2889B14BD100D005C47A9 /* ContactTableViewCell.m */,
 			);
@@ -405,6 +413,7 @@
 				4CB288AA14BD1020005C47A9 /* mugshot.gif in Resources */,
 				4CB288AB14BD1020005C47A9 /* facebook.png in Resources */,
 				4CB288AC14BD1020005C47A9 /* geni.png in Resources */,
+				4815B59A1733C067001D3CE2 /* WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +453,7 @@
 				4815B5901733B6E0001D3CE2 /* OAuthXRequest.m in Sources */,
 				4815B5911733B6E0001D3CE2 /* OAuthXResponse.m in Sources */,
 				4815B5921733B6E0001D3CE2 /* OAuthXToken.m in Sources */,
+				4815B5981733B924001D3CE2 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
